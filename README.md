@@ -1,17 +1,35 @@
-# flutter_shopping_app
+# Flutter Shopping App
 
-A new Flutter project.
+A Flutter shopping application built with a multi-flavor architecture to support separate development, staging, and production environments.
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
+Make sure you have Flutter installed and run:
 
-A few resources to get you started if this is your first Flutter project:
+```bash
+flutter pub get
+```
 
-- [Learn Flutter](https://docs.flutter.dev/get-started/learn-flutter)
-- [Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Flutter learning resources](https://docs.flutter.dev/reference/learning-resources)
+## Running the App
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Each environment has its own entry point. Use the `-t` flag to target the right one:
+
+```bash
+flutter run -t lib/main.dev.dart       # development
+flutter run -t lib/main.staging.dart   # staging
+flutter run -t lib/main.prod.dart      # production
+```
+
+## Running Tests
+
+```bash
+flutter test
+```
+
+## Architecture
+
+The app uses a manual flavor system. Environment-specific configuration (API base URL, app name, app icon) is defined in each entry point file and accessed throughout the app via `FlavorConfig.instance`. See `.claude/rules/architecture.md` for a full breakdown.
+
+## License
+
+MIT — see [LICENSE](LICENSE).
