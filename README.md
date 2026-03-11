@@ -20,6 +20,8 @@ flutter run -t lib/main.staging.dart   # staging
 flutter run -t lib/main.prod.dart      # production
 ```
 
+VS Code launch configs are included in `.vscode/launch.json`. Open the Run & Debug panel (`Cmd+Shift+D`) and select **dev**, **staging**, or **prod**. Do not run `lib/main.dart` directly — it has no `main()` entry point.
+
 ## Running Tests
 
 ```bash
